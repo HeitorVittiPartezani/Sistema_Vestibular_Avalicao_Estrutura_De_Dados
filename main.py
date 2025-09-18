@@ -201,3 +201,55 @@ while True:
                 break
             else:
                 print("\n Opção inválida!")
+
+    # --- MÓDULO DE APROVADOS ---
+    elif opcao_menu == '4':
+        while True:
+            linha()
+            print("                Gestão de Aprovados")
+            linha()
+            print(" 1) Aprovar Candidato")
+            print(" 2) Listar Aprovados")
+            print(" 3) Voltar ao Menu Principal")
+            linha()
+
+            opcao = input(" Digite sua opção: ")
+            if opcao == '1':
+                linha()
+                print("                 Aprovar Candidato")
+                linha()
+                try:
+                    id_busca = int(input(" Digite o ID do candidato a ser aprovado: "))
+                except ValueError:
+                    print("\n ID inválido. Por favor, digite um número.")
+                    continue
+
+                candidato_encontrado = vestibular_fatec.buscar_candidato_por_id(id_busca)
+
+                if candidato_encontrado:
+                    print("\nCandidato encontrado:")
+                    print(candidato_encontrado)
+                    confirmar = input(f" Deseja aprovar {candidato_encontrado.nome}? (S/N) ").upper()
+                    if confirmar == 'S':
+                        resultado = vestibular_fatec.aprovar_candidato(candidato_encontrado)
+                        print(f"\n {resultado}")
+                    else:
+                        print("\n Operação cancelada.")
+                else:
+                    print(f"\n Nenhuma inscrição encontrada com o ID {id_busca}.")
+
+            elif opcao == '2':
+                print(vestibular_fatec.listar_aprovados())
+
+            elif opcao == '3':
+                print("\n Voltando ao menu principal...")
+                break
+            else:
+                print("\n Opção inválida!")
+
+    # --- SAIR DO SISTEMA ---
+    elif opcao_menu == '5':
+        print("\n Saindo do sistema. Até logo!")
+        break
+    else:
+        print("\n Opção inválida! Por favor, escolha uma das opções do menu.")
