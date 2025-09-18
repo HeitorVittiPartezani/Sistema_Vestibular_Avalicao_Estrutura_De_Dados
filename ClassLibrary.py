@@ -18,3 +18,15 @@ class Candidato:
                 f"  Curso: {self.curso}\n"
                 f"  Status Pagamento: {self.status}\n"
                 f"---------------------------")
+    
+class AlunoAprovado:
+    """
+    Nova classe para representar os dados do aluno aprovado.
+    """
+    def __init__(self, nome, cpf, curso):
+        self.nome = nome
+        self.cpf = cpf
+        self.curso = curso
+    
+    def __repr__(self):
+        return (f"  - Nome: {self.nome} | CPF: {self.cpf} | Curso: {self.curso}")
