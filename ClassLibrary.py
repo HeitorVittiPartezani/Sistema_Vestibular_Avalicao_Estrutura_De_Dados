@@ -1,0 +1,20 @@
+# Arquivo: ClassLibrary.py
+
+from ListaEncadeada import ListaEncadeada
+import math
+
+class Candidato:
+    def __init__(self, id, nome, cpf, curso, status):
+        self.id = id
+        self.nome = nome
+        self.cpf = cpf
+        self.curso = curso
+        self.status = status
+        
+    def __repr__(self):
+        return (f"\n--- Inscrição Nº: {self.id} ---\n"
+                f"  Nome: {self.nome}\n"
+                f"  CPF: {self.cpf}\n"
+                f"  Curso: {self.curso}\n"
+                f"  Status Pagamento: {self.status}\n"
+                f"---------------------------")
