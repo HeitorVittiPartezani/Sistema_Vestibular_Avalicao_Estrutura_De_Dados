@@ -30,3 +30,11 @@ class AlunoAprovado:
     
     def __repr__(self):
         return (f"  - Nome: {self.nome} | CPF: {self.cpf} | Curso: {self.curso}")
+    
+class Funcionario:
+    def __init__(self, nome, cargo):
+        self.nome = nome
+        self.cargo = cargo
+
+    def __repr__(self):
+        return f"  Nome: {self.nome} | Cargo: {self.cargo}"
