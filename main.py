@@ -177,3 +177,27 @@ while True:
                 break
             else:
                 print("\n Opção inválida!")
+
+    # --- MÓDULO GERENCIAR VESTIBULAR ---
+    elif opcao_menu == '3':
+        while True:
+            linha()
+            print("            Gerenciamento do Vestibular")
+            linha()
+            print(" 1) Gerar Relatório de Salas")
+            print(" 2) Gerar Relação Candidato/Vaga")
+            print(" 3) Voltar ao Menu Principal")
+            linha()
+
+            opcao = input(" Digite sua opção: ")
+            if opcao == '1':
+                relatorio = vestibular_fatec.gerar_relatorio_de_salas()
+                print(relatorio)
+            elif opcao == '2':
+                relatorio = vestibular_fatec.gerar_relacao_candidato_vaga()
+                print(relatorio)
+            elif opcao == '3':
+                print("\n Voltando ao menu principal...")
+                break
+            else:
+                print("\n Opção inválida!")
